@@ -3,8 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'h_list_view_item.dart';
 
-class HomeHListView extends StatelessWidget {
-  const HomeHListView({
+class BooksListView extends StatelessWidget {
+  const BooksListView({
     super.key,
   });
 
