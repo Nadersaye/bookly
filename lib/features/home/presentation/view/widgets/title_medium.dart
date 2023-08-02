@@ -9,9 +9,12 @@ class TitleMedium extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      'Best Seller',
-      style: Styles.titleMedium,
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(24, 40, 24, 18),
+      child: Text(
+        'Best Seller',
+        style: Styles.titleMedium,
+      ),
     );
   }
 }
