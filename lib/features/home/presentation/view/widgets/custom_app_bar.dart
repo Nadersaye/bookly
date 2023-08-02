@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../core/utils/assets.dart';
 
@@ -15,14 +16,18 @@ class CustomAppBar extends StatelessWidget {
         children: [
           Image.asset(
             ImagePath.logo,
-            width: 75,
-            height: 16.1,
+            width: 75.w,
+            height: 16.1.h,
           ),
           const Spacer(),
-          Image.asset(
-            ImagePath.searchIcon,
-            width: 25,
-            height: 25,
+          SizedBox(
+            width: 25.w,
+            child: AspectRatio(
+              aspectRatio: 1,
+              child: Image.asset(
+                ImagePath.searchIcon,
+              ),
+            ),
           )
         ],
       ),
