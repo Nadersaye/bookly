@@ -10,17 +10,15 @@ class HomeHListViewItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 224.h,
-      child: AspectRatio(
-        aspectRatio: 150 / 224,
-        child: Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.circular(16.r)),
-            image: const DecorationImage(
-              image: AssetImage(ImagePath.testImage),
-              fit: BoxFit.fill,
-            ),
+    return AspectRatio(
+      aspectRatio: 150 / 224,
+      child: Container(
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.all(Radius.circular(16.r)),
+          image: const DecorationImage(
+            image: AssetImage(ImagePath.testImage),
+            fit: BoxFit.fill,
           ),
         ),
       ),
