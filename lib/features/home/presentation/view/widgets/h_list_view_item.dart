@@ -17,7 +17,7 @@ class HomeHListViewItem extends StatelessWidget {
           color: Colors.white,
           borderRadius: BorderRadius.all(Radius.circular(16.r)),
           image: const DecorationImage(
-            image: AssetImage(ImagePath.testImage),
+            image: AssetImage(Assets.testImage),
             fit: BoxFit.fill,
           ),
         ),
