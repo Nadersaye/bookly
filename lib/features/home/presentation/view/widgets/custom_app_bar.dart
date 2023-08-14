@@ -15,7 +15,7 @@ class CustomAppBar extends StatelessWidget {
       child: Row(
         children: [
           Image.asset(
-            ImagePath.logo,
+            Assets.logo,
             width: 75.w,
             height: 16.1.h,
           ),
@@ -25,7 +25,7 @@ class CustomAppBar extends StatelessWidget {
             child: AspectRatio(
               aspectRatio: 1,
               child: Image.asset(
-                ImagePath.searchIcon,
+                Assets.searchIcon,
               ),
             ),
           )
