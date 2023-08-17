@@ -13,7 +13,7 @@ class TitleMedium extends StatelessWidget {
       padding: const EdgeInsets.fromLTRB(24, 40, 24, 18),
       child: Text(
         'Best Seller',
-        style: Styles.titleMedium,
+        style: Styles.textStyle20,
       ),
     );
   }

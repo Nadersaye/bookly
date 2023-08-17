@@ -1,24 +1,22 @@
-import 'package:bookly/core/utils/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../constants.dart';
+
 abstract class Styles {
-  static TextStyle titleMedium =
+  static TextStyle textStyle14 =
+      TextStyle(fontSize: 14.sp, fontWeight: FontWeight.normal);
+  static TextStyle textStyle16 =
+      TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w500);
+  static TextStyle textStyle18 =
       TextStyle(fontSize: 18.sp, fontWeight: FontWeight.w600);
-  static const textStyle14 =
-      TextStyle(fontSize: 14, fontWeight: FontWeight.normal);
-  static const textStyle16 =
-      TextStyle(fontSize: 16, fontWeight: FontWeight.w500);
-  static const textStyle18 =
-      TextStyle(fontSize: 18, fontWeight: FontWeight.w600);
-  static const textStyle20 = TextStyle(
-    fontSize: 20,
+  static TextStyle textStyle20 = TextStyle(
+    fontSize: 20.sp,
     fontWeight: FontWeight.normal,
-    fontFamily: Assets.gTSectraFine,
   );
-  static const textStyle30 = TextStyle(
-    fontSize: 30,
+  static TextStyle textStyle30 = TextStyle(
+    fontSize: 30.sp,
     fontWeight: FontWeight.normal,
-    fontFamily: Assets.gTSectraFine,
+    fontFamily: gTSectraFine,
   );
 }
