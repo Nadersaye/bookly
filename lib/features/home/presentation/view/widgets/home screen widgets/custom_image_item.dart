@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../../core/utils/assets.dart';
 
-class HomeHListViewItem extends StatelessWidget {
-  const HomeHListViewItem({
-    super.key,
-  });
-
+class CustomImageItem extends StatelessWidget {
+  const CustomImageItem({super.key, required this.borderRadius});
+  final BorderRadius borderRadius;
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
@@ -15,7 +12,8 @@ class HomeHListViewItem extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           color: Colors.white,
-          borderRadius: BorderRadius.all(Radius.circular(16.r)),
+          //BorderRadius.all(Radius.circular(16.r))
+          borderRadius: borderRadius,
           image: const DecorationImage(
             image: AssetImage(Assets.testImage),
             fit: BoxFit.fill,
