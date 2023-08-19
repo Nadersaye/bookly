@@ -8,7 +8,8 @@ class SearchView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const SafeArea(
-      child: SearchViewBody(),
-    );
+        child: Scaffold(
+      body: SearchViewBody(),
+    ));
   }
 }

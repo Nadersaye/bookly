@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'best_seller_list_view_item copy.dart';
+import 'best_seller_list_view.dart';
 import 'custom_app_bar.dart';
 import 'h_list_view.dart';
 import 'title_medium.dart';

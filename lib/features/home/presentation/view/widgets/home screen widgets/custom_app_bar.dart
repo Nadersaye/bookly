@@ -1,5 +1,7 @@
+import 'package:bookly/core/utils/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../../../core/utils/assets.dart';
 
@@ -20,12 +22,17 @@ class CustomAppBar extends StatelessWidget {
             height: 16.1.h,
           ),
           const Spacer(),
-          SizedBox(
-            width: 25.w,
-            child: AspectRatio(
-              aspectRatio: 1,
-              child: Image.asset(
-                Assets.searchIcon,
+          GestureDetector(
+            onTap: () {
+              GoRouter.of(context).go(AppRoutes.searchView);
+            },
+            child: SizedBox(
+              width: 25.w,
+              child: AspectRatio(
+                aspectRatio: 1,
+                child: Image.asset(
+                  Assets.searchIcon,
+                ),
               ),
             ),
           )
