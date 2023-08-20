@@ -11,7 +11,7 @@ class SearchResualtListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.builder(
       padding: EdgeInsets.zero,
-      physics: const NeverScrollableScrollPhysics(),
+      //physics: const NeverScrollableScrollPhysics(),
       itemBuilder: (context, x) {
         return const BestSellerListViewItem();
       },

@@ -16,7 +16,8 @@ class CustomSearchTextField extends StatelessWidget {
             Icons.search_outlined,
             color: AppColors.whiteColor,
           ),
-          border: OutlineInputBorder()),
+          border: OutlineInputBorder(
+              borderRadius: BorderRadius.all(Radius.circular(16)))),
     );
   }
 }
