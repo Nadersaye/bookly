@@ -1,9 +1,8 @@
+import 'package:bookly/features/home/presentation/views/widgets/home%20screen%20widgets/best_seller_list_view_item.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../home/presentation/views/widgets/home screen widgets/best_seller_list_view_item.dart';
-
-class SearchResualtListView extends StatelessWidget {
-  const SearchResualtListView({
+class BestSellerListView extends StatelessWidget {
+  const BestSellerListView({
     super.key,
   });
 
@@ -11,7 +10,8 @@ class SearchResualtListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.builder(
       padding: EdgeInsets.zero,
-      //physics: const NeverScrollableScrollPhysics(),
+      //shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
       itemBuilder: (context, x) {
         return const BestSellerListViewItem();
       },
