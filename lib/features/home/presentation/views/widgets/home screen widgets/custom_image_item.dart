@@ -1,25 +1,34 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../../../core/utils/assets.dart';
-
 class CustomImageItem extends StatelessWidget {
-  const CustomImageItem({super.key, required this.borderRadius});
+  const CustomImageItem(
+      {super.key, required this.borderRadius, required this.imageUrl});
   final BorderRadius borderRadius;
+  final String imageUrl;
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
-      aspectRatio: 150 / 224,
-      child: Container(
+        aspectRatio: 150 / 224,
+        child: CachedNetworkImage(
+          fit: BoxFit.fill,
+          imageUrl: imageUrl,
+          errorWidget: (context, url, error) {
+            return const Icon(Icons.error);
+          },
+          //errorWidget: (context, url, error) => const Icon(Icons.error),
+        )
+        /*Container(
         decoration: BoxDecoration(
           color: Colors.white,
           //BorderRadius.all(Radius.circular(16.r))
           borderRadius: borderRadius,
           image: const DecorationImage(
-            image: AssetImage(Assets.testImage),
+            image: cached(imageUrl:),
             fit: BoxFit.fill,
           ),
         ),
-      ),
-    );
+      ),*/
+        );
   }
 }
