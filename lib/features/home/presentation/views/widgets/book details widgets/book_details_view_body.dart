@@ -27,6 +27,8 @@ class BookDetailsViewBody extends StatelessWidget {
               width: 162.w,
               child: CustomImageItem(
                 borderRadius: BorderRadius.all(Radius.circular(16.r)),
+                imageUrl:
+                    'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/220px-Image_created_with_a_mobile_phone.png',
               )),
           const SizedBox(
             height: 43,
