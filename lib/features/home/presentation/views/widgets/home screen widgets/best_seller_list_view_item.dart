@@ -1,4 +1,5 @@
 import 'package:bookly/core/utils/app_routes.dart';
+import 'package:bookly/features/home/data/models/book_model/book_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -10,8 +11,9 @@ import '../../../../../../core/constants.dart';
 class BestSellerListViewItem extends StatelessWidget {
   const BestSellerListViewItem({
     super.key,
+    required this.books,
   });
-
+  final BookModel books;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -29,8 +31,7 @@ class BestSellerListViewItem extends StatelessWidget {
             children: [
               CustomImageItem(
                 borderRadius: BorderRadius.all(Radius.circular(16.r)),
-                imageUrl:
-                    'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/220px-Image_created_with_a_mobile_phone.png',
+                imageUrl: books.volumeInfo.imageLinks.thumbnail,
               ),
               SizedBox(
                 width: 30.w,
@@ -43,7 +44,7 @@ class BestSellerListViewItem extends StatelessWidget {
                     SizedBox(
                       width: 184.w,
                       child: Text(
-                        'Harry Potter and the Goblet of Fire',
+                        books.volumeInfo.title ?? 'unknown',
                         style: Styles.textStyle20.copyWith(
                           fontFamily: gTSectraFine,
                         ),
@@ -57,7 +58,7 @@ class BestSellerListViewItem extends StatelessWidget {
                     Opacity(
                       opacity: .5,
                       child: Text(
-                        'J.K. Rowling',
+                        books.volumeInfo.authors?[0] ?? 'unknown',
                         style: Styles.textStyle14,
                       ),
                     ),
@@ -69,12 +70,12 @@ class BestSellerListViewItem extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          '19.99 €',
+                          'Free',
                           style: Styles.textStyle20
                               .copyWith(fontWeight: FontWeight.w700),
                         ),
                         const Spacer(),
-                        const BookRating(),
+                        const BookRating(rating: 0, count: 0),
                       ],
                     ),
                   ],
