@@ -8,27 +8,30 @@ class CustomImageItem extends StatelessWidget {
   final String imageUrl;
   @override
   Widget build(BuildContext context) {
-    return AspectRatio(
-        aspectRatio: 150 / 224,
-        child: CachedNetworkImage(
-          fit: BoxFit.fill,
-          imageUrl: imageUrl,
-          errorWidget: (context, url, error) {
-            return const Icon(Icons.error);
-          },
-          //errorWidget: (context, url, error) => const Icon(Icons.error),
-        )
-        /*Container(
-        decoration: BoxDecoration(
-          color: Colors.white,
-          //BorderRadius.all(Radius.circular(16.r))
-          borderRadius: borderRadius,
-          image: const DecorationImage(
-            image: cached(imageUrl:),
+    return ClipRRect(
+      borderRadius: borderRadius,
+      child: AspectRatio(
+          aspectRatio: 150 / 224,
+          child: CachedNetworkImage(
             fit: BoxFit.fill,
+            imageUrl: imageUrl,
+            errorWidget: (context, url, error) {
+              return const Icon(Icons.error);
+            },
+            //errorWidget: (context, url, error) => const Icon(Icons.error),
+          )
+          /*Container(
+          decoration: BoxDecoration(
+            color: Colors.white,
+            //BorderRadius.all(Radius.circular(16.r))
+            borderRadius: borderRadius,
+            image: const DecorationImage(
+              image: cached(imageUrl:),
+              fit: BoxFit.fill,
+            ),
           ),
-        ),
-      ),*/
-        );
+        ),*/
+          ),
+    );
   }
 }
