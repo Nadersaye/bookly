@@ -27,8 +27,9 @@ class BooksListView extends StatelessWidget {
                 itemBuilder: (context, index) {
                   return CustomImageItem(
                     borderRadius: BorderRadius.all(Radius.circular(16.r)),
-                    imageUrl:
-                        state.books[index].volumeInfo.imageLinks.thumbnail,
+                    imageUrl: state
+                            .books[index].volumeInfo.imageLinks?.thumbnail ??
+                        'https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg?20200913095930',
                   );
                 },
                 separatorBuilder: (BuildContext context, int index) {
@@ -42,8 +43,10 @@ class BooksListView extends StatelessWidget {
           );
         } else if (state is FeaturedBooksFailure) {
           return CustomErrorWidget(errorMessage: state.errorMessage);
-        } else {
+        } else if (state is FeaturedBooksLoading) {
           return const CustomLoadingWidget();
+        } else {
+          return const Text('');
         }
       },
     );

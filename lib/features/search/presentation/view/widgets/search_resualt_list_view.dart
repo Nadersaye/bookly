@@ -13,7 +13,7 @@ class SearchResualtListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<NewestBooksCubit, NewestBooksState>(
       builder: (context, state) {
-        if (state is NewestBooksSuccess) {
+        if (state is NewestBooksSuccessState) {
           return ListView.builder(
             padding: EdgeInsets.zero,
             //physics: const NeverScrollableScrollPhysics(),

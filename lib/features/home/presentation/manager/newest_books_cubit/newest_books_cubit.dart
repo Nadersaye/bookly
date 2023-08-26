@@ -7,15 +7,15 @@ import '../../../data/models/book_model/book_model.dart';
 part 'newest_books_state.dart';
 
 class NewestBooksCubit extends Cubit<NewestBooksState> {
-  NewestBooksCubit(this.homeRepo) : super(NewestBooksInitial());
+  NewestBooksCubit(this.homeRepo) : super(NewestBooksInitialState());
   final HomeRepo homeRepo;
   Future fetchNewestBooks() async {
-    emit(NewestBooksLoading());
+    emit(NewestBooksLoadingState());
     var responce = await homeRepo.fetchNewsetBooks();
     responce.fold((failure) {
-      emit(NewestBooksFailure(failure.errorMessage));
+      emit(NewestBooksFailureState(failure.errorMessage));
     }, (books) {
-      emit(NewestBooksSuccess(books));
+      emit(NewestBooksSuccessState(books));
     });
   }
 }

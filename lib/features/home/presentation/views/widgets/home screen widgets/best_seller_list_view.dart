@@ -13,7 +13,7 @@ class BestSellerListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<NewestBooksCubit, NewestBooksState>(
       builder: (context, state) {
-        if (state is NewestBooksSuccess) {
+        if (state is NewestBooksSuccessState) {
           return ListView.builder(
             shrinkWrap: true,
             padding: EdgeInsets.zero,
@@ -25,7 +25,7 @@ class BestSellerListView extends StatelessWidget {
             },
             itemCount: state.books.length,
           );
-        } else if (state is NewestBooksFailure) {
+        } else if (state is NewestBooksFailureState) {
           return CustomErrorWidget(errorMessage: state.errorMessage);
         } else {
           return const CustomLoadingWidget();

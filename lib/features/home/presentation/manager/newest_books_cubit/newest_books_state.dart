@@ -7,18 +7,18 @@ sealed class NewestBooksState extends Equatable {
   List<Object> get props => [];
 }
 
-final class NewestBooksInitial extends NewestBooksState {}
+final class NewestBooksInitialState extends NewestBooksState {}
 
-final class NewestBooksLoading extends NewestBooksState {}
+final class NewestBooksLoadingState extends NewestBooksState {}
 
-final class NewestBooksSuccess extends NewestBooksState {
+final class NewestBooksSuccessState extends NewestBooksState {
   final List<BookModel> books;
 
-  const NewestBooksSuccess(this.books);
+  const NewestBooksSuccessState(this.books);
 }
 
-final class NewestBooksFailure extends NewestBooksState {
+final class NewestBooksFailureState extends NewestBooksState {
   final String errorMessage;
 
-  const NewestBooksFailure(this.errorMessage);
+  const NewestBooksFailureState(this.errorMessage);
 }

@@ -31,7 +31,8 @@ class BestSellerListViewItem extends StatelessWidget {
             children: [
               CustomImageItem(
                 borderRadius: BorderRadius.all(Radius.circular(16.r)),
-                imageUrl: books.volumeInfo.imageLinks.thumbnail,
+                imageUrl: books.volumeInfo.imageLinks?.thumbnail ??
+                    'https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg?20200913095930',
               ),
               SizedBox(
                 width: 30.w,
