@@ -20,7 +20,7 @@ class BestSellerListViewItem extends StatelessWidget {
       padding: EdgeInsets.fromLTRB(31.w, 0, 51.w, 20),
       child: GestureDetector(
         onTap: () {
-          GoRouter.of(context).go(AppRoutes.bookDetailsView, extra: books);
+          GoRouter.of(context).push(AppRoutes.bookDetailsView, extra: books);
         },
         child: SizedBox(
           width: double.infinity,
