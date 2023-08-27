@@ -1,4 +1,5 @@
 import 'package:bookly/core/utils/styles.dart';
+import 'package:bookly/features/home/data/models/book_model/book_model.dart';
 import 'package:bookly/features/home/presentation/views/widgets/home%20screen%20widgets/book_rating.dart';
 import 'package:bookly/features/home/presentation/views/widgets/home%20screen%20widgets/custom_image_item.dart';
 import 'package:flutter/material.dart';
@@ -8,8 +9,8 @@ import 'book_details_app_bar.dart';
 import 'similar_book_details_list_view.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
-  const BookDetailsViewBody({super.key});
-
+  const BookDetailsViewBody({super.key, required this.books});
+  final BookModel books;
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -26,16 +27,16 @@ class BookDetailsViewBody extends StatelessWidget {
           SizedBox(
               width: 162.w,
               child: CustomImageItem(
-                borderRadius: BorderRadius.all(Radius.circular(16.r)),
-                imageUrl:
-                    'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/220px-Image_created_with_a_mobile_phone.png',
-              )),
+                  borderRadius: BorderRadius.all(Radius.circular(16.r)),
+                  imageUrl: books.volumeInfo.imageLinks?.thumbnail ??
+                      'https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg?20200913095930')),
           const SizedBox(
             height: 43,
           ),
           Text(
-            'The Jungle Book',
+            books.volumeInfo.title ?? 'Un known title',
             style: Styles.textStyle30,
+            textAlign: TextAlign.center,
           ),
           const SizedBox(
             height: 4,
@@ -43,7 +44,7 @@ class BookDetailsViewBody extends StatelessWidget {
           Opacity(
             opacity: .7,
             child: Text(
-              'Rudyard Kipling',
+              books.volumeInfo.authors?[0] ?? 'Un known author',
               style: Styles.textStyle18.copyWith(fontWeight: FontWeight.w500),
             ),
           ),
@@ -51,8 +52,8 @@ class BookDetailsViewBody extends StatelessWidget {
             height: 14,
           ),
           const BookRating(
-            count: 25,
-            rating: 255,
+            count: 0,
+            rating: 0,
           ),
           const SizedBox(
             height: 37,
