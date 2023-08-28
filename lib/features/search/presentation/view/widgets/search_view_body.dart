@@ -6,7 +6,6 @@ import 'search_resualt_list_view.dart';
 
 class SearchViewBody extends StatelessWidget {
   const SearchViewBody({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Column(

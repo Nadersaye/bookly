@@ -1,5 +1,5 @@
 import 'package:bookly/core/utils/app_routes.dart';
-import 'package:bookly/features/home/data/models/book_model/book_model.dart';
+import 'package:bookly/core/models/book_model/book_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -46,9 +46,8 @@ class BestSellerListViewItem extends StatelessWidget {
                       width: 184.w,
                       child: Text(
                         books.volumeInfo.title ?? 'unknown',
-                        style: Styles.textStyle20.copyWith(
-                          fontFamily: gTSectraFine,
-                        ),
+                        style: Styles.textStyle20
+                            .copyWith(fontFamily: gTSectraFine, height: .95),
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                       ),
@@ -61,11 +60,10 @@ class BestSellerListViewItem extends StatelessWidget {
                       child: Text(
                         books.volumeInfo.authors?[0] ?? 'unknown',
                         style: Styles.textStyle14,
+                        maxLines: 1,
                       ),
                     ),
-                    const SizedBox(
-                      height: 2,
-                    ),
+                    const Spacer(),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,

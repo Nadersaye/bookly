@@ -1,5 +1,5 @@
 import 'package:bookly/core/utils/styles.dart';
-import 'package:bookly/features/home/data/models/book_model/book_model.dart';
+import 'package:bookly/core/models/book_model/book_model.dart';
 import 'package:bookly/features/home/presentation/views/widgets/home%20screen%20widgets/book_rating.dart';
 import 'package:bookly/features/home/presentation/views/widgets/home%20screen%20widgets/custom_image_item.dart';
 import 'package:flutter/material.dart';
